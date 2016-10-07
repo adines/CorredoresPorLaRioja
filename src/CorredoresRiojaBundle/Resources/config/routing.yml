@@ -1,0 +1,3 @@
+corredores_rioja_homepage:
+    path:     /
+    defaults: { _controller: CorredoresRiojaBundle:Default:index }

@@ -1,4 +1,22 @@
-services:
+#services:
 #    corredores_rioja.example:
 #        class: CorredoresRiojaBundle\Example
 #        arguments: ["@service_id", "plain_value", %parameter%]
+
+services:
+    carrerarepository:
+        alias: carrerarepository.inmemory
+    carrerarepository.inmemory:
+        class: App\CorredoresRiojaInfrastructure\InMemoryRepository\InMemoryCarreraRepository
+        public: false
+    inmemory.carreraservicerepository:
+        class: CorredoresRiojaBundle\Controller\CarrerasController
+        arguments: [@carrerarepository.inmemory]
+    organizacionrepository:
+        alias: organizacionrepository.inmemory
+    organizacionrepository.inmemory:
+        class: App\CorredoresRiojaInfrastructure\InMemoryRepository\InMemoryOrganizacionRepository
+        public: false
+    inmemory.organizacionservicerepository:
+        class: CorredoresRiojaBundle\Controller\OrganizacionController
+        arguments: [@organizacionrepository.inmemory]

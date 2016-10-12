@@ -9,7 +9,7 @@ interface ICarreraRepository {
     public function registrarCarrera(Carrera $carrera);
     public function actualizarInformacionCarrera(Carrera $carrera);
     public function eliminarCarrera(Carrera $carrera);
-    public function buscarCarrearSlug($slug);
+    public function buscarCarreraSlug($slug);
     public function buscarCarreraOrganizacionDisputadas(Organizacion $organizacion);
     public function buscarCarreraOrganizacionNODisputadas(Organizacion $organizacion);
     public function buscarTodasCarreras();

@@ -105,6 +105,12 @@ class Carrera {
         $this->organizacion = $organizacion;
     }
 
+    
+    
+    public function __toString() {
+        return "Id: " . $this->id;
+    }
+
 
 
 }

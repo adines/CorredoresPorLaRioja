@@ -11,7 +11,7 @@ services:
         public: false
     inmemory.carreraservicerepository:
         class: CorredoresRiojaBundle\Controller\CarrerasController
-        arguments: [@carrerarepository.inmemory]
+        arguments: [@carrerarepository.inmemory,"@templating"]
     organizacionrepository:
         alias: organizacionrepository.inmemory
     organizacionrepository.inmemory:

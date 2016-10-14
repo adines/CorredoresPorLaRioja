@@ -1,5 +1,5 @@
 corredores_rioja_homepage:
-    path:     /
+    path:     /corredores
     defaults: { _controller: CorredoresRiojaBundle:Default:index }
     
 show_carreras:

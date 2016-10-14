@@ -1,0 +1,56 @@
+{# empty Twig template #}
+{% extends 'CorredoresRiojaBundle:Corredores:zonacorredores.html.twig' %}
+{% block contenido %}
+        <h1>Carreras por disputar</h1>
+ <div class="centro"/>
+ <ul>
+     <li class="columna">
+         <ul>
+      {% for carrera in carrerasPorDisputar %}
+     <li class="celda">
+         <div class="parteCelda">
+             <img src="/bundles/appcorredoresrioja/images/{{carrera.imagen}}"/>
+         </div>
+         <div class="parteCelda2">
+             <h3><a href="/es/corredores/carreras/{{carrera.slug}}">{{carrera.nombre}}</a></h3>
+             <p>{{carrera.fechaCelebracion}}</p>
+             <div style="float:right; padding:10px 5px">
+                      <a style="padding:5px 8px 5px 10px;background:#5C7E6D;color:#FFF" 
+                         href="/es/corredores/inscribir/{{carrera.slug}}" ><span>Inscríbete</span> </a>
+            </div>
+         </div>    
+     </li>
+     {% endfor %}
+  </ul>
+     </li>
+ </ul>
+</div>
+ <div class="clear"></div>   
+ <h1>Carreras disputadas</h1>
+ 
+<div class="centro"/>
+ <ul>
+     
+     <li class="columna">
+         <ul>
+             {% for carrera in carrerasDisputadas %}
+      <li class="celda">
+         <div class="parteCelda">
+             <img src="/bundles/appcorredoresrioja/images/{{carrera.imagen}}"/>
+         </div>
+         <div class="parteCelda2">
+             <h3><a href="/es/corredores/carreras/{{carrera.slug}}">{{carrera.nombre}}</a></h3>
+             <p>{{carrera.fechaCelebracion}}</p>
+             <div style="float:right; padding:10px 5px">
+                      <a style="padding:5px 8px 5px 10px;background:#5C7E6D;color:#FFF" 
+                         href="/es/corredores/carreras/{{carrera.slug}}" ><span>Clasificaciones</span> </a>
+            </div>
+         </div>    
+     </li>
+     {% endfor %}
+          </ul>
+ </li>
+ </ul>
+</div>
+ <div class="clear"></div>
+{% endblock %}

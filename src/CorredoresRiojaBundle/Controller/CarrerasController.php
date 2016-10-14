@@ -5,6 +5,7 @@ namespace CorredoresRiojaBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use App\CorredoresRiojaInfrastructure\InMemoryRepository\InMemoryCarreraRepository;
+use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 
 /**
  * Description of CarrerasController
@@ -14,17 +15,20 @@ use App\CorredoresRiojaInfrastructure\InMemoryRepository\InMemoryCarreraReposito
 class CarrerasController {
     
     private $servicio;
+    private $template;
     
-    function __construct(InMemoryCarreraRepository $servicio) {
+    function __construct(InMemoryCarreraRepository $servicio,EngineInterface $template) {
         $this->servicio = $servicio;
+        $this->template=$template;
     }
 
     
     
     public function showAllAction()
     {
-        $carreras = $this -> servicio -> buscarTodasCarreras();   
-    	return new Response(implode("<br/>", $carreras));
+        $carreras = $this -> servicio -> buscarTodasCarreras(); 
+        return new Response($this->template->render('CorredoresRiojaBundle:Corredores:carreras.html.twig',array('carrerasPorDisputar'=>$carreras,'carrerasDisputadas'=>$carreras)));
+    	//return new Response(implode("<br/>", $carreras));
     }
     
     public function showCarreraSlugAction($slug)

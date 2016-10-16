@@ -5,6 +5,7 @@ namespace CorredoresRiojaBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use App\CorredoresRiojaInfrastructure\InMemoryRepository\InMemoryCarreraRepository;
+use App\CorredoresRiojaInfrastructure\InMemoryRepository\InMemoryParticipanteRepository;
 use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 
 /**
@@ -14,11 +15,13 @@ use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
  */
 class CarrerasController {
     
-    private $servicio;
+    private $servicioCarrera;
+    private $servicioParticipante;
     private $template;
     
-    function __construct(InMemoryCarreraRepository $servicio,EngineInterface $template) {
-        $this->servicio = $servicio;
+    function __construct(InMemoryCarreraRepository $servicioCarrera, InMemoryParticipanteRepository $servicioParticipante,EngineInterface $template) {
+        $this->servicioCarrera = $servicioCarrera;
+        $this->servicioParticipante = $servicioParticipante;
         $this->template=$template;
     }
 
@@ -26,14 +29,16 @@ class CarrerasController {
     
     public function showAllAction()
     {
-        $carreras = $this -> servicio -> buscarTodasCarreras(); 
+        $carreras = $this -> servicioCarrera -> buscarTodasCarreras(); 
         return new Response($this->template->render('CorredoresRiojaBundle:Corredores:carreras.html.twig',array('carrerasPorDisputar'=>$carreras,'carrerasDisputadas'=>$carreras)));
     	//return new Response(implode("<br/>", $carreras));
     }
     
     public function showCarreraSlugAction($slug)
     {
-        $carrera = $this -> servicio -> buscarCarreraSlug($slug);   
-    	return new Response($carrera);
+        $carrera = $this -> servicioCarrera -> buscarCarreraSlug($slug);
+        $participantes=$this -> servicioParticipante -> buscarParticiantesCarrera($carrera);
+    	return new Response($this->template->render('CorredoresRiojaBundle:Corredores:carrera.html.twig',array('carrera'=>$carrera,'participantes'=>$participantes)));
+        //return new Response($carrera);
     }   
 }

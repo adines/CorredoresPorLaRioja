@@ -9,9 +9,14 @@ services:
     carrerarepository.inmemory:
         class: App\CorredoresRiojaInfrastructure\InMemoryRepository\InMemoryCarreraRepository
         public: false
+    participanterepository:
+        alias: participanterepository.inmemory
+    participanterepository.inmemory:
+        class: App\CorredoresRiojaInfrastructure\InMemoryRepository\InMemoryParticipanteRepository
+        public: false
     inmemory.carreraservicerepository:
         class: CorredoresRiojaBundle\Controller\CarrerasController
-        arguments: [@carrerarepository.inmemory,"@templating"]
+        arguments: [@carrerarepository.inmemory,@participanterepository.inmemory,"@templating"]
     organizacionrepository:
         alias: organizacionrepository.inmemory
     organizacionrepository.inmemory:

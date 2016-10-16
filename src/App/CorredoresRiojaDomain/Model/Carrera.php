@@ -104,6 +104,14 @@ class Carrera {
     function setOrganizacion($organizacion) {
         $this->organizacion = $organizacion;
     }
+    
+    function estaDisputada(){
+        
+    }
+    
+    function finalizadaFechaInscripcion(){
+        
+    }
 
     
     

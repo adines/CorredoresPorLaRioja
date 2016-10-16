@@ -1,0 +1,72 @@
+{# empty Twig template #}
+{% extends 'CorredoresRiojaBundle:Corredores:zonacorredores.html.twig' %}
+{% block contenido %}
+    <div class="centro">
+        <h1>{{carrera.nombre}}</h1>
+        <div class="parteCelda">
+            <img src="/bundles/appcorredoresrioja/images/{{carrera.imagen}}"/>
+        </div>
+        <div class="parteCelda2">
+            <p>{{carrera.descripcion}}</p>
+            <p>Fecha celebración: {{carrera.fechaCelebracion}}
+            <p>Distancia: {{carrera.distancia}}</p>
+            <p>Organiza: <a href="/es/corredores/organizacion/{{carrera.organizacion.id}}">{{carrera.organizacion.nombre}}</a></p>  
+        </div>
+    </div>
+    <div class="clear"></div>
+    {% if carrera.estaDisputada %}
+        <div class="centro">
+            <h3>Lo sentimos, ya no te puedes inscribir a esta carrera.</h3>   
+            <div class="clear"></div> 
+            <h3>Clasificación:</h3>   
+            <table>
+                <thead>
+                    <tr>
+                        <th>Posición</th>
+                        <th>Nombre</th>
+                        <th>Tiempo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{% for participante in participantes %}}
+                    <tr>
+                        <td>
+                            {{participante.posicion}}
+                        </td>
+                        <td>   
+                            {{participante.corredor.nombre}} {{participante.corredor.apellidos}}<br/>
+                        </td>
+                        <th>
+                            {{participante.tiempo}}
+                        </th>
+                    </tr>
+                    {{% endfor %}}
+
+                </tbody>
+            </table>
+
+        </div>
+    {% else %}
+        <div class="centro">
+            {% if carrera.finalizadaFechaInscripcion %}
+                <h3>Lo sentimos, ya no te puedes inscribir a esta carrera. </h3>
+            {% else %}
+                <h3>Tienes hasta el  {{carrera.fechaLimiteInscripcion}} para inscribirte. </h3>
+                <div style="float:right; padding:10px 5px">
+                    <a style="padding:5px 8px 5px 10px;background:#5C7E6D;color:#FFF" 
+                       href="/es/corredores/inscribir/{{carrera.slug}}" ><span>Inscríbete</span> </a>
+                </div>
+            {% endif %}
+
+            <div class="clear"></div>   
+            <h3>Inscritos:</h3>
+            {% for participante in participantes %}
+                <p>{{participante.corredor.nombre}} {{participante.corredor.apellidos}}</p>
+            {% else %} 
+                Todavía no hay inscritos en esta carrera.
+            {% endfor %}
+
+        </div>
+    {% endif %}
+    <div class="clear"> </div> 
+{% endblock %}

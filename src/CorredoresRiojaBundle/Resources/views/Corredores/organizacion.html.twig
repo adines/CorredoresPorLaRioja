@@ -1,0 +1,18 @@
+{# empty Twig template #}
+{% extends 'CorredoresRiojaBundle:Corredores:zonacorredores.html.twig' %}
+{% block contenido %}
+    <div class="centro">
+        <h1>Matute</h1>
+        <p>Matute</p>
+        <p><a href="mailto:{{organizacion.email}}">Contacta</a></p>
+        <p>Carreras organizadas:</p>
+        <ol>
+            {% for carrera in carreras %}
+            <li><a href="/es/corredores/carreras/{{carrera.slug}}">{{carrera.nombre}}</a></li>
+            {% else %}
+            No ha organizado ninguna carrera.
+            {% endfor %}
+        </ol>
+    </div>
+    <div class="clear"> </div>   
+{% endblock %}

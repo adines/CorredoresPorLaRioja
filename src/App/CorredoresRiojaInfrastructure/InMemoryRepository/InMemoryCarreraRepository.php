@@ -37,22 +37,52 @@ class InMemoryCarreraRepository implements ICarreraRepository{
         }
         return null;
     }
-
-    public function buscarCarreraOrganizacionDisputadas(Organizacion $organizacion) {
-        
+    
+    public function buscarCarreraOrganizacionDisputadas(Organizacion $organizacion) {  
+        $aux=array();
+        foreach ($this->carreras as $carrera)
+        {
+            if($carrera->estaDisputada() && $carrera->getOrganizacion()==$organizacion)
+            {
+                $aux[]= $carrera;
+            }
+        }
+        return $aux;
     }
 
     public function buscarCarreraOrganizacionNODisputadas(Organizacion $organizacion) {
-        
+        $aux=array();
+        foreach ($this->carreras as $carrera)
+        {
+            if(!($carrera->estaDisputada()) && $carrera->getOrganizacion()==$organizacion)
+            {
+                $aux[]= $carrera;
+            }
+        }
+        return $aux;
     }
 
     public function buscarCarrerasDisputadas() {
-        
+        $aux=array();
+        foreach ($this->carreras as $carrera)
+        {
+            if($carrera->estaDisputada())
+            {
+                $aux[]= $carrera;
+            }
+        }
+        return $aux;
     }
 
     public function buscarCarrerasNODisputadas() {
         $aux=array();
-        
+        foreach ($this->carreras as $carrera)
+        {
+            if(!($carrera->estaDisputada()))
+            {
+                $aux[]= $carrera;
+            }
+        }
         return $aux;
         
     }
@@ -73,6 +103,18 @@ class InMemoryCarreraRepository implements ICarreraRepository{
 
     public function registrarCarrera(Carrera $carrera) {
         $this->carreras[]= $carrera;
+    }
+
+    public function buscarCarrerasOrganizacion(Organizacion $organizacion) {
+        $aux=array();
+        foreach ($this->carreras as $carrera)
+        {
+            if($carrera->getOrganizacion()==$organizacion)
+            {
+                $aux[]= $carrera;
+            }
+        }
+        return $aux;
     }
 
 }

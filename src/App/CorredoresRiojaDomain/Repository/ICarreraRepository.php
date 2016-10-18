@@ -15,5 +15,6 @@ interface ICarreraRepository {
     public function buscarTodasCarreras();
     public function buscarCarrerasDisputadas();
     public function buscarCarrerasNODisputadas();
+    public function buscarCarrerasOrganizacion(Organizacion $organizacion);
     
 }

@@ -27,7 +27,7 @@ class OrganizacionController{
     public function showOrganizacionSlugAction($slug)
     {
         $organizacion = $this -> servicioOrganizacion -> buscarOrganizacionSlug($slug);
-        $carreras =$this -> servicioCarrera -> buscarCarreraOrganizacion($organizacion);
+        $carreras =$this -> servicioCarrera -> buscarCarrerasOrganizacion($organizacion);
     	return new Response($this->template->render('CorredoresRiojaBundle:Corredores:organizacion.html.twig',array('organizacion'=>$organizacion,'carreras'=>$carreras)));
         //return new Response($organizacion);
     }  

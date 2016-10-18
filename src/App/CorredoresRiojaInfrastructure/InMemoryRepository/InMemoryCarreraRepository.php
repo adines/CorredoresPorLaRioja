@@ -11,8 +11,9 @@ class InMemoryCarreraRepository implements ICarreraRepository{
     
     function __construct() {
         $this->carreras=array();
-        $this->carreras[]=new Carrera(1, "nom", "", "", 10, "", 3, "", null);
-        $this->carreras[]=new Carrera(2, "nom2", "", "", 10, "", 3, "", null);
+        $this->carreras[]=new Carrera(1, "nombre1", "una carrera", '13-02-2013', 100, '13-01-2013', 2, "", null);
+        $this->carreras[]=new Carrera(2, "nombre2", "una carrera2",'20-02-2017', 100, '13-01-2017', 2, "", null);
+        $this->carreras[]=new Carrera(3, "nombre3", "una carrera2",'20-02-2020', 100, '13-01-2020', 2, "", null);
         
     }
 

@@ -29,8 +29,9 @@ class CarrerasController {
     
     public function showAllAction()
     {
-        $carreras = $this -> servicioCarrera -> buscarTodasCarreras(); 
-        return new Response($this->template->render('CorredoresRiojaBundle:Corredores:carreras.html.twig',array('carrerasPorDisputar'=>$carreras,'carrerasDisputadas'=>$carreras)));
+        $carrerasDisp = $this -> servicioCarrera ->buscarCarrerasDisputadas(); 
+        $carrerasNoDisp=$this -> servicioCarrera ->buscarCarrerasNODisputadas();
+        return new Response($this->template->render('CorredoresRiojaBundle:Corredores:carreras.html.twig',array('carrerasPorDisputar'=>$carrerasNoDisp,'carrerasDisputadas'=>$carrerasDisp)));
     	//return new Response(implode("<br/>", $carreras));
     }
     

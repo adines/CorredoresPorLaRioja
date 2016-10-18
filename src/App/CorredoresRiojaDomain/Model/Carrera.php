@@ -106,11 +106,21 @@ class Carrera {
     }
     
     function estaDisputada(){
-        
+        if($this->fechaCelebracion<=date('d/m/y'))
+        {
+            return True;
+        }else{
+            return False;
+        }
     }
     
     function finalizadaFechaInscripcion(){
-        
+        if($this->fechaLimiteInscripcion<=date('d/m/y'))
+        {
+            return True;
+        }else{
+            return False;
+        }
     }
 
     

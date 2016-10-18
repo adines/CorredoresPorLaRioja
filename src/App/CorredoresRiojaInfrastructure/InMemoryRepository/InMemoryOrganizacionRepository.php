@@ -10,6 +10,7 @@ class InMemoryOrganizacionRepository implements IOrganizacionRepository{
     
     function __construct() {
         $this->organizaciones=array();
+        $this->organizaciones[]=new Organizacion(1, "Matute", "desc", "pepe@gmail.com", "pass");
     }
 
     

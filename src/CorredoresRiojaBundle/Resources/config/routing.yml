@@ -1,5 +1,5 @@
 corredores_rioja_homepage:
-    path:     /corredores
+    path:     /portada
     defaults: { _controller: CorredoresRiojaBundle:Default:index }
     
 show_carreras:
@@ -7,7 +7,7 @@ show_carreras:
     defaults: { _controller: inmemory.carreraservicerepository:showAllAction }
 
 show_carrera_slug:
-    path: /corredores/carrera/{slug}
+    path: /corredores/carreras/{slug}
     defaults: { _controller: inmemory.carreraservicerepository:showCarreraSlugAction }
 
 show_organizacion_slug:

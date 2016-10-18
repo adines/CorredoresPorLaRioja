@@ -11,7 +11,7 @@ class Organizacion {
     private $salt;
     private $slug;
     
-    function __construct($id, $nombre, $descripción, $email, $password, $salt) {
+    function __construct($id, $nombre, $descripción, $email, $password) {
         $this->id = $id;
         $this->nombre = $nombre;
         $this->descripción = $descripción;

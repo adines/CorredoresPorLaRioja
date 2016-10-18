@@ -4,13 +4,13 @@
     <div class="centro">
         <h1>{{carrera.nombre}}</h1>
         <div class="parteCelda">
-            <img src="/bundles/appcorredoresrioja/images/{{carrera.imagen}}"/>
+            <img src="/bundles/corredoresrioja/images/{{carrera.imagen}}"/>
         </div>
         <div class="parteCelda2">
             <p>{{carrera.descripcion}}</p>
             <p>Fecha celebración: {{carrera.fechaCelebracion}}
             <p>Distancia: {{carrera.distancia}}</p>
-            <p>Organiza: <a href="/es/corredores/organizacion/{{carrera.organizacion.id}}">{{carrera.organizacion.nombre}}</a></p>  
+            <p>Organiza: <a href="/corredores/organizacion/{{carrera.organizacion.slug}}">{{carrera.organizacion.nombre}}</a></p>  
         </div>
     </div>
     <div class="clear"></div>
@@ -28,7 +28,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {{% for participante in participantes %}}
+                    {% for participante in participantes %}
                     <tr>
                         <td>
                             {{participante.posicion}}
@@ -40,7 +40,7 @@
                             {{participante.tiempo}}
                         </th>
                     </tr>
-                    {{% endfor %}}
+                    {% endfor %}
 
                 </tbody>
             </table>
@@ -54,7 +54,7 @@
                 <h3>Tienes hasta el  {{carrera.fechaLimiteInscripcion}} para inscribirte. </h3>
                 <div style="float:right; padding:10px 5px">
                     <a style="padding:5px 8px 5px 10px;background:#5C7E6D;color:#FFF" 
-                       href="/es/corredores/inscribir/{{carrera.slug}}" ><span>Inscríbete</span> </a>
+                       href="/corredores/inscribir/{{carrera.slug}}" ><span>Inscríbete</span> </a>
                 </div>
             {% endif %}
 

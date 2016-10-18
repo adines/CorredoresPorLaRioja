@@ -9,14 +9,14 @@
       {% for carrera in carrerasPorDisputar %}
      <li class="celda">
          <div class="parteCelda">
-             <img src="/bundles/appcorredoresrioja/images/{{carrera.imagen}}"/>
+             <img src="/bundles/corredoresrioja/images/{{carrera.imagen}}"/>
          </div>
          <div class="parteCelda2">
-             <h3><a href="/es/corredores/carreras/{{carrera.slug}}">{{carrera.nombre}}</a></h3>
+             <h3><a href="/corredores/carreras/{{carrera.slug}}">{{carrera.nombre}}</a></h3>
              <p>{{carrera.fechaCelebracion}}</p>
              <div style="float:right; padding:10px 5px">
                       <a style="padding:5px 8px 5px 10px;background:#5C7E6D;color:#FFF" 
-                         href="/es/corredores/inscribir/{{carrera.slug}}" ><span>Inscríbete</span> </a>
+                         href="/corredores/inscribir/{{carrera.slug}}" ><span>Inscríbete</span> </a>
             </div>
          </div>    
      </li>
@@ -36,14 +36,14 @@
              {% for carrera in carrerasDisputadas %}
       <li class="celda">
          <div class="parteCelda">
-             <img src="/bundles/appcorredoresrioja/images/{{carrera.imagen}}"/>
+             <img src="/bundles/corredoresrioja/images/{{carrera.imagen}}"/>
          </div>
          <div class="parteCelda2">
-             <h3><a href="/es/corredores/carreras/{{carrera.slug}}">{{carrera.nombre}}</a></h3>
+             <h3><a href="/corredores/carreras/{{carrera.slug}}">{{carrera.nombre}}</a></h3>
              <p>{{carrera.fechaCelebracion}}</p>
              <div style="float:right; padding:10px 5px">
                       <a style="padding:5px 8px 5px 10px;background:#5C7E6D;color:#FFF" 
-                         href="/es/corredores/carreras/{{carrera.slug}}" ><span>Clasificaciones</span> </a>
+                         href="/corredores/carreras/{{carrera.slug}}" ><span>Clasificaciones</span> </a>
             </div>
          </div>    
      </li>

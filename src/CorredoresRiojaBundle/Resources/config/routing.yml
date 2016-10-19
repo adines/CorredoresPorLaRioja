@@ -13,3 +13,12 @@ show_carrera_slug:
 show_organizacion_slug:
     path: /corredores/organizacion/{slug}
     defaults: { _controller: inmemory.organizacionservicerepository:showOrganizacionSlugAction }
+
+registro:
+    path:     /corredores/registro
+    defaults: { _controller: CorredoresRiojaBundle:Default:registro }
+    
+admin:
+    path:     /admin
+    defaults: { _controller: CorredoresRiojaBundle:Default:admin }
+    

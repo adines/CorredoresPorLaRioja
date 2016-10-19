@@ -13,7 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
  *
  * @author adines
  */
-class CarrerasController {
+class CarrerasController{
     
     private $servicioCarrera;
     private $servicioParticipante;

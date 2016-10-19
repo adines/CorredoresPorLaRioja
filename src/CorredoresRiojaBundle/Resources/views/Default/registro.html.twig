@@ -1,0 +1,15 @@
+{# empty Twig template #}
+{% extends "CorredoresRiojaBundle:Corredores:zonacorredores.html.twig" %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('bundles/appcorredoresrioja/css/formulario.css')}}" rel="stylesheet" media="all" type="text/css">
+{% endblock %}
+
+
+{% block body %}
+    <form action="{{ path('registro') }}" method="post" {{ form_enctype(formulario) }}>
+    {{ form_widget(formulario) }}
+   </form>
+    <div class="clear"> </div>   
+{% endblock %}

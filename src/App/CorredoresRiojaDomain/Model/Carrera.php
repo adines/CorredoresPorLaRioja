@@ -106,7 +106,7 @@ class Carrera {
     }
     
     function estaDisputada(){
-        if($this->fechaCelebracion<=date('d/m/y'))
+        if($this->fechaCelebracion<=new \DateTime())
         {
             return True;
         }else{
@@ -115,7 +115,7 @@ class Carrera {
     }
     
     function finalizadaFechaInscripcion(){
-        if($this->fechaLimiteInscripcion<=date('d/m/y'))
+        if($this->fechaLimiteInscripcion<=new \DateTime())
         {
             return True;
         }else{

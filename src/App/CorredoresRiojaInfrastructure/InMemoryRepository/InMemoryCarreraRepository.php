@@ -12,8 +12,8 @@ class InMemoryCarreraRepository implements ICarreraRepository{
     function __construct() {
         $this->carreras=array();
         $this->carreras[]=new Carrera(1, "Matutrail", "Carrera por Matute", new \DateTime('2017-02-01'), 100, new \DateTime('2017-02-01'), 2, "matutrail.jpg", new Organizacion(1, "Matute", "desc", "pepe@gmail.com", "pass"));
-        $this->carreras[]=new Carrera(2, "nombre2", "una carrera2", new \DateTime('2013-02-01'), 100, new \DateTime('2014-02-01'), 2, "", new Organizacion(1, "org1", "desc", "pepe@gmail.com", "pass"));
-        $this->carreras[]=new Carrera(3, "nombre3", "una carrera2", new \DateTime('2015-02-01'), 100, new \DateTime('2017-02-01'), 2, "", new Organizacion(1, "org1", "desc", "pepe@gmail.com", "pass"));
+        $this->carreras[]=new Carrera(2, "Carrera UR", "Carrera UR", new \DateTime('2016-09-20 12:09'), 100, new \DateTime('2016-09-20 12:09'), 2, "ur.png", new Organizacion(1, "Matute", "desc", "pepe@gmail.com", "pass"));
+        $this->carreras[]=new Carrera(3, "Anguiano", "Carrera por Anguiano", new \DateTime('2016-09-01 12:09'), 1, new \DateTime('2016-09-01 12:09'), 2, "anguiano.jpg", new Organizacion(1, "Matute", "desc", "pepe@gmail.com", "pass"));
         
     }
 

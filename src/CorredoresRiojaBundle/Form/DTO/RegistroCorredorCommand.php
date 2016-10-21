@@ -9,7 +9,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @author master
  */
-class RegistroCorredorCommnad {
+class RegistroCorredorCommand {
     /**
      * @Assert\NotBlank()
      */

@@ -25,3 +25,9 @@ services:
     inmemory.organizacionservicerepository:
         class: CorredoresRiojaBundle\Controller\OrganizacionController
         arguments: [@organizacionrepository.inmemory,@carrerarepository.inmemory,"@templating"]
+    corredoresrepository:
+        alias: corredoresrepository.inmemory
+    corredoresrepository.inmemory:
+        class: App\CorredoresRiojaInfrastructure\InMemoryRepository\InMemoryCorredorRepository
+        public: false
+        

@@ -3,11 +3,11 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <link href="{{ asset('bundles/appcorredoresrioja/css/formulario.css')}}" rel="stylesheet" media="all" type="text/css">
+    <link href="{{ asset('bundles/corredoresrioja/css/formulario.css')}}" rel="stylesheet" media="all" type="text/css">
 {% endblock %}
 
 
-{% block body %}
+{% block contenido %}
     <form action="{{ path('registro') }}" method="post" {{ form_enctype(formulario) }}>
     {{ form_widget(formulario) }}
    </form>

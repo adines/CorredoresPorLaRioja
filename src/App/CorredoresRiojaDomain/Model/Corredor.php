@@ -86,18 +86,18 @@ class Corredor {
     }
 
     /**
-     * @Assert\True(message = "La contraseña no puede ser la misma que tu nombre")
+     * @Assert\IsTrue(message = "La contraseña no puede ser la misma que tu nombre")
      */
     public function isPasswordLegal() {
         return $this->nombre != $this->password;
     }
 
     /**
-     * @Assert\True(message = "Tienes que ser mayor de edad para registrarte")
+     * @Assert\IsTrue(message = "Tienes que ser mayor de edad para registrarte")
      */
     public function isMayorEdad() {
         $currentyear = getdate()['year'];
-        $birthdayyear = ($this->fechanacimiento->format('Y'));
+        $birthdayyear = ($this->fechaNacimiento->format('Y'));
         $diff_years = ($currentyear - $birthdayyear);
         return $diff_years >= 18;
     }

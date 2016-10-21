@@ -2,8 +2,11 @@
 
 namespace CorredoresRiojaBundle\Controller;
 
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use CorredoresRiojaBundle\Form\CorredorType;
 
 class DefaultController extends Controller {
 
@@ -24,14 +27,14 @@ class DefaultController extends Controller {
 // Codificamos la contraseña del corredor
             $encoder = $this->get('security.encoder_factory')->getEncoder($corredor);
             $password = $encoder->encodePassword($corredor->getPassword(), $corredor->getSalt());
-            $corredor->saveEncodedPassword($password);
+            //$corredor->saveEncodedPassword($password);
             // Lo almacenamos en nuestro repositorio de corredores
-            $this->get('corredoresrepository')->registraCorredor($corredor);
+            $this->get('corredoresrepository')->registrarCorredor($corredor);
             // Creamos un mensaje flash para mostrar al usuario que 
             // se ha registrado correctamente
-            $this->get('session')->getFlashBag()->add('info', '¡Enhorabuena, ' . $corredor->getName() . ' te has registrado en CorredoresPorLaRioja!');
+            $this->get('session')->getFlashBag()->add('info', '¡Enhorabuena, ' . $corredor->getNombre() . ' te has registrado en CorredoresPorLaRioja!');
             // Reedirigimos al usuario a la portada
-            return $this->redirect($this->generateUrl('portada'));
+            return $this->redirect($this->generateUrl('corredores_rioja_homepage'));
         }
         return $this->render("CorredoresRiojaBundle:Default:registro.html.twig", array('formulario' => $form->createView()));
     }

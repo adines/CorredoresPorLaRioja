@@ -2,6 +2,7 @@
 
 
 namespace CorredoresRiojaBundle\Form\Transformer;
+
 use Symfony\Component\Form\DataTransformerInterface;
 use CorredoresRiojaBundle\Form\DTO\RegistroCorredorCommand;
 use App\CorredoresRiojaDomain\Model\Corredor;

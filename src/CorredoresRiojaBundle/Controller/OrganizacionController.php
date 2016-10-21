@@ -12,7 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
  *
  * @author adines
  */
-class OrganizacionController{
+class OrganizacionController {
     
     private $servicioOrganizacion;
     private $servicioCarrera;

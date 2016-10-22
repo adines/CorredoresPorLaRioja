@@ -5,18 +5,15 @@ security:
        App\CorredoresRiojaDomain\Model\Corredor: 
            algorithm: bcrypt
            cost: 12
+       CorredoresRiojaBundle\Security\CorredorUser:
+           algorithm: bcrypt
+           cost: 12 
 
     # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
     providers:
-        in_memory:
-            memory:
-                users:
-                    ryan:
-                        password: ryanpass
-                        roles: 'ROLE_USER'
-                    admin:
-                        password: kitten
-                        roles: 'ROLE_ADMIN'
+        corredores:
+            id: corredores_user_provider
+
     
     
     #encoders:
@@ -27,6 +24,13 @@ security:
         - { path: ^/admin, roles: ROLE_ADMIN}
 
     firewalls:
+        default:
+            anonymous: ~
+            http_basic: ~
+            form_login:
+                login_path: usuario_login
+                check_path: usuario_login_check
+            provider: corredores
         # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/

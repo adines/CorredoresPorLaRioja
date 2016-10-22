@@ -21,4 +21,12 @@ registro:
 admin:
     path:     /admin
     defaults: { _controller: CorredoresRiojaBundle:Default:admin }
+
+usuario_login:
+    path: /corredores/login
+    defaults: { _controller: CorredoresRiojaBundle:Default:login }
+usuario_login_check:
+    path: /corredores/login_check
+usuario_logout:
+    path: /corredores/logout
     

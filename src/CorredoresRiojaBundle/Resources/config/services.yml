@@ -30,4 +30,7 @@ services:
     corredoresrepository.inmemory:
         class: App\CorredoresRiojaInfrastructure\InMemoryRepository\InMemoryCorredorRepository
         public: false
+    corredores_user_provider:
+        class : CorredoresRiojaBundle\Security\CorredorUserProvider
+        arguments: ["@corredoresrepository"]
         

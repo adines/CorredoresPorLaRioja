@@ -29,4 +29,7 @@ usuario_login_check:
     path: /corredores/login_check
 usuario_logout:
     path: /corredores/logout
+show_mis_carreras:
+    path: /corredores/miscarreras
+    defaults: { _controller: inmemory.corredoresservicerepository:showCarrerasCorredorAction }
     

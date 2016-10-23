@@ -1,0 +1,84 @@
+{# empty Twig template #}
+{% extends 'CorredoresRiojaBundle:Corredores:zonacorredores.html.twig' %}
+
+{% block submenu %}
+    <ul>
+        <li>
+            <a href="/portada">Portada<br/></a>
+        </li>
+        <li>
+            <a href="/corredores/carreras">Carreras<br/></a>
+        </li>
+        <li>
+            <a href="/corredores/miscarreras">Mis carreras<br/></a>
+        </li>
+        <li>
+            <a href="/corredores/perfil">Perfil<br/></a>
+        </li>
+        <li>
+            <a href="/corredores/logout">Logout<br/></a>
+        </li>
+    </ul>
+    <div style="clear: left;"></div>
+{% endblock %}
+
+{% block contenido %}
+    <p> Hola Pepe, a continuación se muestran las carreras en las que estás inscrito
+        y las carreras que has disputado. </p>
+
+
+    <h2>Carreras por disputar</h2>
+    <div class="centro"/>
+    <ul>
+        <li class="columna">
+            <ul>
+                {% for carrera in carrerasNODisputadas %}
+                    <li class="celda">
+                        <div class="parteCelda">
+                            <img src="/bundles/corredoresrioja/images/{{carrera.imagen}}"/>
+                        </div>
+                        <div class="parteCelda2">
+                            <h3><a href="/es/corredores/carreras/{{carrera.slug}}">{{carrera.nombre}}</a></h3>
+                            <p>{{carrera.fechaCelebracion|date('Y/m/d h:m')}}</p>
+                            <div style="float:right; padding:10px 5px">
+                                <a style="padding:5px 8px 5px 10px;background:#5C7E6D;color:#FFF" 
+                                   href="/es/corredores/desapuntar/{{carrera.slug}}" ><span>Desapuntarse</span> </a>
+                            </div>
+                        </div>    
+                    </li>
+                {% else %} 
+                    <p> No estsá apuntado a ninguna carrera actualmente.</p>
+                {% endfor %}
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="clear"></div>   
+<h2>Carreras disputadas</h2>
+<div class="centro"/>
+<ul>
+    <li class="columna">
+        <ul>
+            {% for carrera in carrerasDisputadas %}
+                <li class="celda">
+                    <div class="parteCelda">
+                        <img src="/bundles/corredoresrioja/images/{{carrera.imagen}}"/>
+                    </div>
+                    <div class="parteCelda2">
+                        <h3><a href="/es/corredores/carreras/{{carrera.slug}}">{{carrera.nombre}}</a></h3>
+                        <p>{{carrera.fechaCelebracion|date('Y/m/d h:m')}}</p>
+                        <div style="float:right; padding:10px 5px">
+                            <a style="padding:5px 8px 5px 10px;background:#5C7E6D;color:#FFF" 
+                               href="/corredores/carreras/{{carrera.slug}}" ><span>Clasificaciones</span> </a>
+                        </div>
+                    </div>    
+                </li>
+            {% else %} 
+                <p> Todavía no has disputado ninguna carrera.</p>   
+            {% endfor %}
+
+        </ul>
+    </li>
+</ul>
+</div>
+{% endblock %}

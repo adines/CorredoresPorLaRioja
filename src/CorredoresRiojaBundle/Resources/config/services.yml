@@ -30,6 +30,9 @@ services:
     corredoresrepository.inmemory:
         class: App\CorredoresRiojaInfrastructure\InMemoryRepository\InMemoryCorredorRepository
         public: false
+    inmemory.corredoresservicerepository:
+        class: CorredoresRiojaBundle\Controller\CorredoresController
+        arguments: [@participanterepository.inmemory,@corredoresrepository.inmemory,"@templating",'@security.authorization_checker',"@security.context"]
     corredores_user_provider:
         class : CorredoresRiojaBundle\Security\CorredorUserProvider
         arguments: ["@corredoresrepository"]

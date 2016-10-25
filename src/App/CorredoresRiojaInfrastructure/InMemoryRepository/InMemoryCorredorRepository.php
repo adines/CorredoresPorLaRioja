@@ -50,8 +50,7 @@ class InMemoryCorredorRepository implements ICorredorRepository{
     }
 
     public function registrarCorredor(Corredor $corredor) {
-        array_push($this->corredores,$corredor);
-        //$this->corredores[]= $corredor;
+        $this->corredores[]= $corredor;
     }
 
 }

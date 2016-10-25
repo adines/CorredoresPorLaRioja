@@ -30,7 +30,10 @@ security:
             form_login:
                 login_path: usuario_login
                 check_path: usuario_login_check
+                default_target_path: corredores_rioja_homepage
             provider: corredores
+            logout:
+                path: usuario_logout
         # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/

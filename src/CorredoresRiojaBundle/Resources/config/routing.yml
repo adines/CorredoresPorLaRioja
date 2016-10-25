@@ -1,3 +1,8 @@
+corredores_rioja_homepage2:
+    path:     /
+    defaults: { _controller: CorredoresRiojaBundle:Default:index }
+    
+
 corredores_rioja_homepage:
     path:     /portada
     defaults: { _controller: CorredoresRiojaBundle:Default:index }
@@ -17,6 +22,10 @@ show_organizacion_slug:
 registro:
     path:     /corredores/registro
     defaults: { _controller: CorredoresRiojaBundle:Default:registro }
+    
+perfil:
+    path:     /corredores/perfil
+    defaults: { _controller: CorredoresRiojaBundle:Default:cambiarCorredor }
     
 admin:
     path:     /admin

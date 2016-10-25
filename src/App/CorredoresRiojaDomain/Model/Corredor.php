@@ -20,7 +20,7 @@ class Corredor {
         $this->apellidos = $apellidos;
         $this->email = $email;
         $this->password = $password;
-        $this->salt = md5(time());
+        $this->salt = "";
         $this->direccion = $direccion;
         $this->fechaNacimiento = $fechaNacimiento;
     }

@@ -10,7 +10,7 @@ class InMemoryCorredorRepository implements ICorredorRepository{
 
     function __construct() {
         $this->corredores=array();
-        $this->corredores[]=new Corredor(1234, 'pepe', 'a', 'a@a.com', '1234', 'a',new \DateTime());
+        $this->corredores[]=new Corredor('1234', 'pepe', 'a', 'a@a.com', '1234', 'a',new \DateTime());
     }
 
     public function actualizarInformacionCorredor(Corredor $corredor) {

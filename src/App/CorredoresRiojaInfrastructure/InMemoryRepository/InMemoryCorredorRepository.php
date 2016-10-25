@@ -18,7 +18,8 @@ class InMemoryCorredorRepository implements ICorredorRepository{
         {
             if($value->getDni()==$corredor->getDni())
             {
-                $this->corredores[$key]=$corredor;
+                unset($this->corredores[$key]);
+                $this->corredores[]=$corredor;
             }
         }
     }

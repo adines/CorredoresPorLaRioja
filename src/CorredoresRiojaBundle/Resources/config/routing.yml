@@ -27,6 +27,15 @@ perfil:
     path:     /corredores/perfil
     defaults: { _controller: CorredoresRiojaBundle:Default:cambiarCorredor }
     
+apuntar_carrera:
+    path:     /corredores/inscribir/{id}
+    defaults: { _controller: inmemory.corredoresservicerepository:apuntarCarreraAction }
+    
+
+desapuntar_carrera:
+    path:     /corredores/desapuntar/{id}
+    defaults: { _controller: inmemory.corredoresservicerepository:desapuntarCarreraAction }
+    
 admin:
     path:     /admin
     defaults: { _controller: CorredoresRiojaBundle:Default:admin }

@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use CorredoresRiojaBundle\Form\CorredorType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class DefaultController extends Controller {
 
@@ -19,13 +20,14 @@ class DefaultController extends Controller {
 
     public function registroAction(Request $peticion) {
         $form = $this->createForm(CorredorType::class);
+        $form->add('registro', SubmitType::class, array('label' => 'Registro'));
         $form->handleRequest($peticion);
         if ($form->isValid()) {
             // Recogemos el corredor que se ha registrado
             $corredor = $form->getData();
 // Codificamos la contraseña del corredor
             $encoder = $this->get('security.encoder_factory')->getEncoder($corredor);
-            $password = $encoder->encodePassword($corredor->getPassword(), $corredor->getSalt());
+            //$password = $encoder->encodePassword($corredor->getPassword(), $corredor->getSalt());
             //$corredor->saveEncodedPassword($password);
             // Lo almacenamos en nuestro repositorio de corredores
             $this->get('corredoresrepository')->registrarCorredor($corredor);
@@ -45,19 +47,20 @@ class DefaultController extends Controller {
         }
 
         $user = $this->getUser();
-        $this->get('corredorRepository')->getEncoder($corredor);
+        $corredorAnt=$this->get('corredoresrepository')->buscarCorredor($user->getUsername());
 
-        $form = $this->createForm(CorredorType::class,$corredor);
+        $form = $this->createForm(CorredorType::class,$corredorAnt);
+        $form->add('registro', SubmitType::class, array('label' => 'Guardar cambios'));
         $form->handleRequest($peticion);
         if ($form->isValid()) {
             // Recogemos el corredor que se ha registrado
             $corredor = $form->getData();
 // Codificamos la contraseña del corredor
             $encoder = $this->get('security.encoder_factory')->getEncoder($corredor);
-            $password = $encoder->encodePassword($corredor->getPassword(), $corredor->getSalt());
+            //$password = $encoder->encodePassword($corredor->getPassword(), $corredor->getSalt());
             //$corredor->saveEncodedPassword($password);
             // Lo almacenamos en nuestro repositorio de corredores
-            $this->get('corredoresrepository')->registrarCorredor($corredor);
+            $this->get('corredoresrepository')->actualizarInformacionCorredor($corredor);
             // Creamos un mensaje flash para mostrar al usuario que 
             // se ha registrado correctamente
             $this->get('session')->getFlashBag()->add('info', '¡Enhorabuena, ' . $corredor->getNombre() . ' te has registrado en CorredoresPorLaRioja!');

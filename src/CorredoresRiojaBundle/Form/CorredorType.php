@@ -36,9 +36,9 @@ class CorredorType extends AbstractType {
                 // El tipo de fechanacimiento debe ser birthday de lo contrario sólo muestra
                 // fechas hasta el año 2000.
                 ->add('fechanacimiento', BirthdayType::class, array('label' => 'Fecha de nacimiento: '))
-                ->add('direccion', TextareaType::class, array('label' => 'Dirección: '))
+                ->add('direccion', TextareaType::class, array('label' => 'Dirección: '));
                 // Por último añadimos el botón de envío.
-                ->add('registro', SubmitType::class, array('label' => 'Registro'));
+                
 
 
         $builder->addViewTransformer(new RegistroCorredorTransformer());

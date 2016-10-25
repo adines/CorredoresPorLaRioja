@@ -7,7 +7,7 @@ use \App\CorredoresRiojaDomain\Model\Corredor;
 
 interface IParticipanteRepository {
     
-    public function inscribirParticipanteCarrera(Participante $participante, Carrera $carrera);
+    public function inscribirParticipanteCarrera(Corredor $corredor, Carrera $carrera);
     public function actualizarTiempoCorredorCarrera(Corredor $corredor,Carrera $carrera,$tiempo);
     public function eliminarParticipante(Participante $participante);
     public function buscarTodosParticiantes();

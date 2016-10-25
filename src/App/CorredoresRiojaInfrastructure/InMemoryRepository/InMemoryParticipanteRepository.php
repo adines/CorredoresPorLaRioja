@@ -16,7 +16,13 @@ class InMemoryParticipanteRepository implements IParticipanteRepository{
     }
     
     public function actualizarTiempoCorredorCarrera(Corredor $corredor, Carrera $carrera, $tiempo) {
-        
+        foreach ($this->participantes as $participante)
+        {
+            if($participante->getCorredor()->getDni()==$corredor->getDni() && $participante->getCarrera()->getId()==$carrera->getId())
+            {
+                $participante->setTiempo($tiempo);
+            }
+        }
     }
 
     public function buscarCarrerasDisputadasCorredor(Corredor $corredor) {
@@ -60,15 +66,28 @@ class InMemoryParticipanteRepository implements IParticipanteRepository{
     }
 
     public function eliminarParticipante(Participante $participante) {
-        
+        foreach ($this->participantes as $key => $value)
+        {
+            if($value->getCorredor()->getDni()==$participante->getCorredor()->getDni() && $value->getCarrera()->getId()==$participante->getCarrera()->getId())
+            {
+                unset($this->participantes[$key]);
+            }
+        }
     }
 
     public function estaInscritoCorredorCarrera(Corredor $corredor, Carrera $carrera) {
-        
+        foreach ($this->participantes as $key => $value)
+        {
+            if($value->getCorredor()->getDni()==$corredor->getDni() && $value->getCarrera()->getId()==$carrera->getId())
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
-    public function inscribirParticipanteCarrera(Participante $participante, Carrera $carrera) {
-        
+    public function inscribirParticipanteCarrera(Corredor $corredor, Carrera $carrera) {
+        $this->participantes[]=new Participante($corredor, $carrera, 0, 0);
     }
 
 }

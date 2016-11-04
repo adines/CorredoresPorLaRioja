@@ -55,6 +55,7 @@ class CorredoresController {
         $corredor = $this->servicioCorredor->buscarCorredor($user->getUsername());
         $carrera=$this->servicioCarrera->buscarCarreraSlug($slug);
         $this->servicioParticipante->eliminarParticipante(new Participante($corredor, $carrera, 0, 0));
+        return new Response($this->template->render('CorredoresRiojaBundle:Corredores:portada.html.twig'));
     }
     
     public function apuntarCarreraAction($slug)
@@ -66,6 +67,7 @@ class CorredoresController {
         $corredor = $this->servicioCorredor->buscarCorredor($user->getUsername());
         $carrera=$this->servicioCarrera->buscarCarreraSlug($slug);
         $this->servicioParticipante->inscribirParticipanteCarrera($corredor, $carrera);
+        return new Response($this->template->render('CorredoresRiojaBundle:Corredores:portada.html.twig'));
     }
 
 }

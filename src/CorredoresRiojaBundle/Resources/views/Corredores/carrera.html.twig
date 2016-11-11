@@ -10,7 +10,7 @@
             <p>{{carrera.descripcion}}</p>
             <p>Fecha celebración: {{carrera.fechaCelebracion|date('Y/m/d h:m')}}
             <p>Distancia: {{carrera.distancia}}</p>
-            <p>Organiza: <a href="/corredores/organizacion/{{carrera.organizacion.slug}}">{{carrera.organizacion.nombre}}</a></p>  
+            <p>Organiza: <a href="{{ path('show_organizacion_slug',{'slug': carrera.organizacion.slug}) }}">{{carrera.organizacion.nombre}}</a></p>  
         </div>
     </div>
     <div class="clear"></div>
@@ -54,7 +54,7 @@
                 <h3>Tienes hasta el  {{carrera.fechaLimiteInscripcion|date('d \\d\\e M \\d\\e Y')}} para inscribirte. </h3>
                 <div style="float:right; padding:10px 5px">
                     <a style="padding:5px 8px 5px 10px;background:#5C7E6D;color:#FFF" 
-                       href="/corredores/inscribir/{{carrera.slug}}" ><span>Inscríbete</span> </a>
+                       href="{{ path('apuntar_carrera',{'slug':carrera.slug}) }}" ><span>Inscríbete</span> </a>
                 </div>
             {% endif %}
 

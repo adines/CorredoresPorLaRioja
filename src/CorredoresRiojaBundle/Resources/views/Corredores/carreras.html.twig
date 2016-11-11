@@ -12,11 +12,11 @@
                             <img src="/bundles/corredoresrioja/images/{{carrera.imagen}}"/>
                         </div>
                         <div class="parteCelda2">
-                            <h3><a href="/corredores/carreras/{{carrera.slug}}">{{carrera.nombre}}</a></h3>
+                            <h3><a href="{{ path('show_carrera_slug',{'slug':carrera.slug}) }}">{{carrera.nombre}}</a></h3>
                             <p>{{carrera.fechaCelebracion|date('Y/m/d h:m')}}</p>
                             <div style="float:right; padding:10px 5px">
                                 <a style="padding:5px 8px 5px 10px;background:#5C7E6D;color:#FFF" 
-                                   href="/corredores/inscribir/{{carrera.slug}}" ><span>Inscríbete</span> </a>
+                                   href="{{ path('apuntar_carrera',{'slug':carrera.slug}) }}" ><span>Inscríbete</span> </a>
                             </div>
                         </div>    
                     </li>
@@ -38,11 +38,11 @@
                         <img src="/bundles/corredoresrioja/images/{{carrera.imagen}}"/>
                     </div>
                     <div class="parteCelda2">
-                        <h3><a href="/corredores/carreras/{{carrera.slug}}">{{carrera.nombre}}</a></h3>
+                        <h3><a href="{{ path('show_carrera_slug',{'slug':carrera.slug}) }}">{{carrera.nombre}}</a></h3>
                         <p>{{carrera.fechaCelebracion|date('Y/m/d h:m')}}</p>
                         <div style="float:right; padding:10px 5px">
                             <a style="padding:5px 8px 5px 10px;background:#5C7E6D;color:#FFF" 
-                               href="/corredores/carreras/{{carrera.slug}}" ><span>Clasificaciones</span> </a>
+                               href="{{ path('show_carrera_slug',{'slug':carrera.slug}) }}" ><span>Clasificaciones</span> </a>
                         </div>
                     </div>    
                 </li>

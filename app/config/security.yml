@@ -34,6 +34,7 @@ security:
             provider: corredores
             logout:
                 path: usuario_logout
+                target: corredores_rioja_homepage
         # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/

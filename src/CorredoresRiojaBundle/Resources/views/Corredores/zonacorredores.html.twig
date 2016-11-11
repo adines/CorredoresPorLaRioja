@@ -5,34 +5,35 @@
     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
         <ul>
             <li>
-                <a href="/portada">Portada<br/></a>
-            </li>
-            <li>
-                <a href="/corredores/carreras">Carreras<br/></a>
-            </li>
-            <li>
-                <a href="/corredores/miscarreras">Mis carreras<br/></a>
-            </li>
-
-            <li><a href="/corredores/perfil">Perfil<br/></a></li>
-            <li>
-                <a href="/corredores/logout">Logout<br/></a>
-            </li>
+            <a href="{{ path('corredores_rioja_homepage') }}">Portada<br/></a>
+        </li>
+        <li>
+            <a href="{{ path('show_carreras') }}">Carreras<br/></a>
+        </li>
+        <li>
+            <a href="{{ path('show_mis_carreras') }}">Mis carreras<br/></a>
+        </li>
+        <li>
+            <a href="{{ path('perfil') }}">Perfil<br/></a>
+        </li>
+        <li>
+            <a href="{{ path('usuario_logout') }}">Logout<br/></a>
+        </li>
         </ul>
         <div style="clear: left;"></div>
     {% else %}
         <ul>
             <li>
-                <a href="/portada">Portada<br/></a>
-            </li>
+            <a href="{{ path('corredores_rioja_homepage') }}">Portada<br/></a>
+        </li>
+        <li>
+            <a href="{{ path('show_carreras') }}">Carreras<br/></a>
+        </li>
+        <li>
+            <a href="{{ path('show_mis_carreras') }}">Mis carreras<br/></a>
+        </li>
             <li>
-                <a href="/corredores/carreras">Carreras<br/></a>
-            </li>
-            <li>
-                <a href="/corredores/miscarreras">Mis carreras<br/></a>
-            </li>
-            <li>
-                <a href="/corredores/login">Login<br/></a>
+                <a href="{{ path('usuario_login') }}">Login<br/></a>
             </li>
         </ul>
         <div style="clear: left;"></div>

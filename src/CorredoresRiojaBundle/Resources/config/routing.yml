@@ -1,53 +1,84 @@
 corredores_rioja_homepage2:
-    path:     /
+    path:     /{_locale}/
     defaults: { _controller: CorredoresRiojaBundle:Default:index }
+    requirements:
+       _locale: en|es
     
 
 corredores_rioja_homepage:
-    path:     /portada
+    path:     /{_locale}/portada
     defaults: { _controller: CorredoresRiojaBundle:Default:index }
+    requirements:
+       _locale: en|es
     
 show_carreras:
-    path: /corredores/carreras
+    path: /{_locale}/corredores/carreras
     defaults: { _controller: inmemory.carreraservicerepository:showAllAction }
+    requirements:
+       _locale: en|es
 
 show_carrera_slug:
-    path: /corredores/carreras/{slug}
+    path: /{_locale}/corredores/carreras/{slug}
     defaults: { _controller: inmemory.carreraservicerepository:showCarreraSlugAction }
+    requirements:
+       _locale: en|es
 
 show_organizacion_slug:
-    path: /corredores/organizacion/{slug}
+    path: /{_locale}/corredores/organizacion/{slug}
     defaults: { _controller: inmemory.organizacionservicerepository:showOrganizacionSlugAction }
+    requirements:
+       _locale: en|es
 
 registro:
-    path:     /corredores/registro
+    path:     /{_locale}/corredores/registro
     defaults: { _controller: CorredoresRiojaBundle:Default:registro }
+    requirements:
+       _locale: en|es
     
 perfil:
-    path:     /corredores/perfil
+    path:     /{_locale}/corredores/perfil
     defaults: { _controller: CorredoresRiojaBundle:Default:cambiarCorredor }
+    requirements:
+       _locale: en|es
     
 apuntar_carrera:
-    path:     /corredores/inscribir/{id}
+    path:     /{_locale}/corredores/inscribir/{slug}
     defaults: { _controller: inmemory.corredoresservicerepository:apuntarCarreraAction }
+    requirements:
+       _locale: en|es
     
 
 desapuntar_carrera:
-    path:     /corredores/desapuntar/{id}
+    path:     /{_locale}/corredores/desapuntar/{slug}
     defaults: { _controller: inmemory.corredoresservicerepository:desapuntarCarreraAction }
+    requirements:
+       _locale: en|es
     
 admin:
-    path:     /admin
+    path:     /{_locale}/admin
     defaults: { _controller: CorredoresRiojaBundle:Default:admin }
+    requirements:
+       _locale: en|es
 
 usuario_login:
-    path: /corredores/login
+    path: /{_locale}/corredores/login
     defaults: { _controller: CorredoresRiojaBundle:Default:login }
+    requirements:
+       _locale: en|es
+       
 usuario_login_check:
-    path: /corredores/login_check
+    path: /{_locale}/corredores/login_check
+    requirements:
+       _locale: en|es
+       
 usuario_logout:
-    path: /corredores/logout
+    path: /{_locale}/corredores/logout
+    requirements:
+       _locale: en|es
+       
 show_mis_carreras:
-    path: /corredores/miscarreras
+    path: /{_locale}/corredores/miscarreras
     defaults: { _controller: inmemory.corredoresservicerepository:showCarrerasCorredorAction }
+    requirements:
+       _locale: en|es
     

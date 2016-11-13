@@ -154,7 +154,7 @@
             </trans-unit>
             <trans-unit id="38">
                 <source>submenu.anyadircarrera</source>
-                <target>Add race</target>
+                <target>New race</target>
             </trans-unit>
             <trans-unit id="39">
                 <source>submenu.modificarcarrera</source>
@@ -171,6 +171,14 @@
             <trans-unit id="42">
                 <source>loginorg.mensaje</source>
                 <target>In order to create races it is necessary to register.</target>
+            </trans-unit>
+            <trans-unit id="43">
+                <source>organizacion.portada.titulo</source>
+                <target>Welcome, these are the races you've organized</target>
+            </trans-unit>
+            <trans-unit id="44">
+                <source>organizacion.carrera.modificar</source>
+                <target>Modify</target>
             </trans-unit>
         </body>
     </file>

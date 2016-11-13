@@ -24,7 +24,7 @@ services:
         public: false
     inmemory.organizacionservicerepository:
         class: CorredoresRiojaBundle\Controller\OrganizacionController
-        arguments: [@organizacionrepository.inmemory,@carrerarepository.inmemory,"@templating"]
+        arguments: [@organizacionrepository.inmemory,@carrerarepository.inmemory,"@templating",'@security.authorization_checker',"@security.context"]
     corredoresrepository:
         alias: corredoresrepository.inmemory
     corredoresrepository.inmemory:
@@ -32,8 +32,11 @@ services:
         public: false
     inmemory.corredoresservicerepository:
         class: CorredoresRiojaBundle\Controller\CorredoresController
-        arguments: [@participanterepository.inmemory,@corredoresrepository.inmemory,@carrerarepository.inmemory,"@templating",'@security.authorization_checker',"@security.context","@router"]
+        arguments: [@participanterepository.inmemory,@corredoresrepository.inmemory,@carrerarepository.inmemory,"@templating",'@security.authorization_checker',"@security.context"]
     corredores_user_provider:
         class : CorredoresRiojaBundle\Security\CorredorUserProvider
         arguments: ["@corredoresrepository"]
+    organizaciones_user_provider:
+        class : CorredoresRiojaBundle\Security\OrganizacionUserProvider
+        arguments: ["@organizacionrepository"]
         

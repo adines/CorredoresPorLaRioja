@@ -1,29 +1,38 @@
 <?php
 
-namespace App\CorredoresRiojaDomain\Model;
+namespace CorredoresRiojaBundle\Form\DTO;
 
-class Organizacion {
-    private $id;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * Description of RegistroCorredorCommnad
+ *
+ * @author master
+ */
+class RegistroOrganizacionCommand {
+        
+    /**
+     * @Assert\NotBlank()
+     */
     private $nombre;
+    
+    /**
+     * @Assert\NotBlank()
+     */
     private $descripcion;
+    
+    /**
+     * @Assert\NotBlank()
+     * @Assert\Email()
+     */
     private $email;
+    
+    /**
+     * @Assert\NotBlank()
+     */
     private $password;
-    private $salt;
-    private $slug;
     
-    function __construct($id, $nombre, $descripcion, $email, $password) {
-        $this->id = $id;
-        $this->nombre = $nombre;
-        $this->descripcion = $descripcion;
-        $this->email = $email;
-        $this->password = $password;
-        $this->salt = "";
-        $this->slug = Util::getSlug($nombre);
-    }
-    
-    function getId() {
-        return $this->id;
-    }
+
 
     function getNombre() {
         return $this->nombre;
@@ -49,15 +58,12 @@ class Organizacion {
         return $this->slug;
     }
 
-    function setId($id) {
-        $this->id = $id;
-    }
 
     function setNombre($nombre) {
         $this->nombre = $nombre;
     }
 
-    function setDescripción($descripcion) {
+    function setDescripcion($descripcion) {
         $this->descripcion = $descripcion;
     }
 
@@ -68,5 +74,6 @@ class Organizacion {
     function setPassword($password) {
         $this->password = $password;
     }
+
 
 }

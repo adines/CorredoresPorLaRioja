@@ -81,4 +81,42 @@ show_mis_carreras:
     defaults: { _controller: inmemory.corredoresservicerepository:showCarrerasCorredorAction }
     requirements:
        _locale: en|es
-    
+   
+organizaciones:
+    locales: {es: "/{_locale}/organizaciones", en: "/{_locale}/organizations"}
+    defaults: { _controller: inmemory.organizacionservicerepository:showCarrerasOrganizacionAction }
+    requirements:
+       _locale: en|es
+       
+organizacion_login:
+    locales: {es: "/{_locale}/organizaciones/login", en: "/{_locale}/organizations/login"}
+    defaults: { _controller: CorredoresRiojaBundle:Default:loginOrganizacion }
+    requirements:
+       _locale: en|es
+organizacion_login_check:
+    locales: {es: "/{_locale}/organizaciones/login_check", en: "/{_locale}/organizations/login_check"}
+    requirements:
+       _locale: en|es
+       
+organizacion_logout:
+    locales: {es: "/{_locale}/organizaciones/logout", en: "/{_locale}/organizations/logout"}
+    requirements:
+       _locale: en|es
+       
+modificar_carrera:
+    locales: {es: "/{_locale}/organizaciones/modificar_carreras/{slug}", en: "/{_locale}/organizations/modify_races/{slug}"}
+    defaults: { _controller: inmemory.carreraservicerepository:modificarCarreraAction }
+    requirements:
+       _locale: en|es
+       
+registro_organizacion:
+    locales: {es: "/{_locale}/organizaciones/registro", en: "/{_locale}/organizations/register"}
+    defaults: { _controller: CorredoresRiojaBundle:Default:registroOrganizacion }
+    requirements:
+       _locale: en|es
+       
+modificar_organizacion:
+    locales: {es: "/{_locale}/organizaciones/perfil", en: "/{_locale}/organizations/profile"}
+    defaults: { _controller: CorredoresRiojaBundle:Default:modificarOrganizacion }
+    requirements:
+       _locale: en|es

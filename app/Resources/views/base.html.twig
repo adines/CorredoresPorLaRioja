@@ -38,8 +38,8 @@
             <div class="pestanias">
                 {% block pestanias %}
                     <div class="grupoPestanias">
-                        <div class="pestaniaSel"><a href="/portada">{{'menu.corredores'|trans}}</a></div>
-                        <div class="pestaniaNoSel"><a href="/organizaciones">{{'menu.organizadores'|trans}}</a></div>
+                        <div class="pestaniaSel"><a href="{{ path('corredores_rioja_homepage') }}">{{'menu.corredores'|trans}}</a></div>
+                        <div class="pestaniaNoSel"><a href="{{ path('organizaciones') }}">{{'menu.organizadores'|trans}}</a></div>
                         <div class="pestaniaNoSel"><a href="/admin/">{{'menu.intranet'|trans}}</a></div>
                     </div>
                 {% endblock %}

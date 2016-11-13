@@ -8,11 +8,14 @@ security:
        CorredoresRiojaBundle\Security\CorredorUser: plaintext
            #algorithm: bcrypt
            #cost: 12 
+       CorredoresRiojaBundle\Security\OrganizacionUser: plaintext
 
     # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
     providers:
         corredores:
             id: corredores_user_provider
+        organizaciones:
+            id: organizaciones_user_provider
 
     
     
@@ -25,6 +28,7 @@ security:
 
     firewalls:
         default:
+            pattern: ^/(es|en)/(corredores|runners)
             anonymous: ~
             http_basic: ~
             form_login:
@@ -35,6 +39,19 @@ security:
             logout:
                 path: usuario_logout
                 target: corredores_rioja_homepage
+                
+        organizacion:
+            pattern: ^/(es|en)/(organizaciones|organizations)
+            anonymous: ~
+            http_basic: ~
+            form_login:
+                login_path: organizacion_login
+                check_path: organizacion_login_check
+                default_target_path: organizaciones
+            provider: organizaciones
+            logout:
+                path: organizacion_logout
+                target: organizaciones
         # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/

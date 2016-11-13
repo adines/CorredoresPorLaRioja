@@ -173,6 +173,14 @@
                 <source>loginorg.mensaje</source>
                 <target>Para poder crear carreras es necesario registrarse.</target>
             </trans-unit>
+            <trans-unit id="43">
+                <source>organizacion.portada.titulo</source>
+                <target>Bienvenido, estas son las carreras que has organizado</target>
+            </trans-unit>
+            <trans-unit id="44">
+                <source>organizacion.carrera.modificar</source>
+                <target>Modificar</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

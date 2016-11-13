@@ -12,7 +12,7 @@
         <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
-    <form action="{{ path('usuario_login_check') }}" method="post" class="izda">
+    <form action="{{ path('organizacion_login_check') }}" method="post" class="izda">
         <label for="username">Username (Email):</label>
         <input type="text" id="username" name="_username" value="{{ last_username }}" /> <br/>
 
@@ -24,12 +24,12 @@
 
     <div class="nuevo izda">
         <div>
-            <p style="font-weight:bold; margin-top:5px">{{'loginorg.nuevo'|trans}}</p>
+            <p style="font-weight:bold; margin-top:5px">{{'loginorg.nueva'|trans}}</p>
             <p style="margin-top:5px;line-height:1.4em;">{{'loginorg.mensaje'|trans}} </p>
         </div>
 
         <div  class="registrob">
-            <a href="{{ path('registro') }}">{{'login.registrese'|trans}}</a>
+            <a href="{{ path('registro_organizacion') }}">{{'login.registrese'|trans}}</a>
         </div> 
     </div>
 {% endblock %}

@@ -1,0 +1,16 @@
+{# empty Twig template #}
+{% extends "CorredoresRiojaBundle:Organizaciones:zonaorganizaciones.html.twig" %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('bundles/corredoresrioja/css/formulario.css')}}" rel="stylesheet" media="all" type="text/css">
+{% endblock %}
+
+
+{% block contenido %}
+     <h1>Nueva Organización</h1>
+    <form action="{{ path('registro_organizacion') }}" method="post" {{ form_enctype(formulario) }}>
+    {{ form_widget(formulario) }}
+   </form>
+    <div class="clear"> </div>   
+{% endblock %}

@@ -38,6 +38,11 @@ class CarrerasController {
         return new Response($this->template->render('CorredoresRiojaBundle:Corredores:carrera.html.twig', array('carrera' => $carrera, 'participantes' => $participantes)));
         //return new Response($carrera);
     }
+    
+    public function modificarCarreraAction($slug)
+    {
+        
+    }
 
     
 

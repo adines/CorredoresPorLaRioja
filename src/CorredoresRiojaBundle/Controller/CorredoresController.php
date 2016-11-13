@@ -43,7 +43,7 @@ class CorredoresController {
         $corredor = $this->servicioCorredor->buscarCorredor($user->getUsername());
         $carrerasDisputadas = $this->servicioParticipante->buscarCarrerasDisputadasCorredor($corredor);
         $carrerasNODisputadas = $this->servicioParticipante->buscarCarrerasNODisputadasCorredor($corredor);
-        return new Response($this->template->render('CorredoresRiojaBundle:Corredores:misCarreras.html.twig', array('carrerasDisputadas' => $carrerasDisputadas, 'carrerasNODisputadas' => $carrerasNODisputadas)));
+        return new Response($this->template->render('CorredoresRiojaBundle:Corredores:misCarreras.html.twig', array('carrerasDisputadas' => $carrerasDisputadas, 'carrerasNODisputadas' => $carrerasNODisputadas,'nombre'=>$corredor->getNombre())));
     }
     
     public function desapuntarCarreraAction($slug)

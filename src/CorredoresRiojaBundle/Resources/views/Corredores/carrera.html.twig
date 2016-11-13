@@ -8,30 +8,30 @@
         </div>
         <div class="parteCelda2">
             <p>{{carrera.descripcion}}</p>
-            <p>Fecha celebración: {{carrera.fechaCelebracion|date('Y/m/d h:m')}}
-            <p>Distancia: {{carrera.distancia}}</p>
-            <p>Organiza: <a href="{{ path('show_organizacion_slug',{'slug': carrera.organizacion.slug}) }}">{{carrera.organizacion.nombre}}</a></p>  
+            <p>{{'carrera.fecha'|trans}} {{carrera.fechaCelebracion|date('Y/m/d h:m')}}
+            <p>{{'carrera.distancia'|trans}} {{carrera.distancia}}</p>
+            <p>{{'carrera.organiza'|trans}} <a href="{{ path('show_organizacion_slug',{'slug': carrera.organizacion.slug}) }}">{{carrera.organizacion.nombre}}</a></p>  
         </div>
     </div>
     <div class="clear"></div>
     {% if carrera.estaDisputada %}
         <div class="centro">
-            <h3>Lo sentimos, ya no te puedes inscribir a esta carrera.</h3>   
+            <h3>{{'carrera.yanopuede'|trans}}</h3>   
             <div class="clear"></div> 
-            <h3>Clasificación:</h3>   
+            <h3>{{'carrera.clasificacion'|trans}}:</h3>   
             <table>
                 <thead>
                     <tr>
-                        <th>Posición</th>
-                        <th>Nombre</th>
-                        <th>Tiempo</th>
+                        <th>{{'carrera.dorsal'|trans}}</th>
+                        <th>{{'carrera.nombre'|trans}}</th>
+                        <th>{{'carrera.tiempo'|trans}}</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for participante in participantes %}
                     <tr>
                         <td>
-                            {{participante.posicion}}
+                            {{participante.dorsal}}
                         </td>
                         <td>   
                             {{participante.corredor.nombre}} {{participante.corredor.apellidos}}<br/>
@@ -49,21 +49,21 @@
     {% else %}
         <div class="centro">
             {% if carrera.finalizadaFechaInscripcion %}
-                <h3>Lo sentimos, ya no te puedes inscribir a esta carrera. </h3>
+                <h3>{{'carrera.yanopuede'|trans}}</h3>
             {% else %}
-                <h3>Tienes hasta el  {{carrera.fechaLimiteInscripcion|date('d \\d\\e M \\d\\e Y')}} para inscribirte. </h3>
+                <h3>{{'carrera.hasta'|trans({ '%fecha%' : carrera.fechaLimiteInscripcion|date('d \\d\\e M \\d\\e Y') })}} </h3>
                 <div style="float:right; padding:10px 5px">
                     <a style="padding:5px 8px 5px 10px;background:#5C7E6D;color:#FFF" 
-                       href="{{ path('apuntar_carrera',{'slug':carrera.slug}) }}" ><span>Inscríbete</span> </a>
+                       href="{{ path('apuntar_carrera',{'slug':carrera.slug}) }}" ><span>{{'portada.inscribete'|trans}}</span> </a>
                 </div>
             {% endif %}
 
             <div class="clear"></div>   
-            <h3>Inscritos:</h3>
+            <h3>{{'carrera.inscritos'|trans}}:</h3>
             {% for participante in participantes %}
                 <p>{{participante.corredor.nombre}} {{participante.corredor.apellidos}}</p>
             {% else %} 
-                Todavía no hay inscritos en esta carrera.
+                {{'carrera.noinscritos'|trans}}
             {% endfor %}
 
         </div>

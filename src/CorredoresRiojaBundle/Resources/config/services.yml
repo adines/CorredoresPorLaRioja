@@ -32,7 +32,7 @@ services:
         public: false
     inmemory.corredoresservicerepository:
         class: CorredoresRiojaBundle\Controller\CorredoresController
-        arguments: [@participanterepository.inmemory,@corredoresrepository.inmemory,@carrerarepository.inmemory,"@templating",'@security.authorization_checker',"@security.context"]
+        arguments: [@participanterepository.inmemory,@corredoresrepository.inmemory,@carrerarepository.inmemory,"@templating",'@security.authorization_checker',"@security.context","@router"]
     corredores_user_provider:
         class : CorredoresRiojaBundle\Security\CorredorUserProvider
         arguments: ["@corredoresrepository"]

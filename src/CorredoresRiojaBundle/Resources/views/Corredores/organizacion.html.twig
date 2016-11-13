@@ -2,15 +2,15 @@
 {% extends 'CorredoresRiojaBundle:Corredores:zonacorredores.html.twig' %}
 {% block contenido %}
     <div class="centro">
-        <h1>Matute</h1>
-        <p>Matute</p>
-        <p><a href="mailto:{{organizacion.email}}">Contacta</a></p>
-        <p>Carreras organizadas:</p>
+        <h1>{{organizacion.nombre}}</h1>
+        <p>{{organizacion.nombre}}</p>
+        <p><a href="mailto:{{organizacion.email}}">{{'pie.contacto'|trans}}</a></p>
+        <p>{{'organizacion.organizadas'|trans}}</p>
         <ol>
             {% for carrera in carreras %}
             <li><a href="{{ path('show_carrera_slug',{'slug':carrera.slug}) }}">{{carrera.nombre}}</a></li>
             {% else %}
-            No ha organizado ninguna carrera.
+            {{'organizacion.nohaorganizado'|trans}}
             {% endfor %}
         </ol>
     </div>

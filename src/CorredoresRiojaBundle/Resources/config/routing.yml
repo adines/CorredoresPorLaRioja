@@ -6,78 +6,78 @@ corredores_rioja_homepage2:
     
 
 corredores_rioja_homepage:
-    path:     /{_locale}/portada
+    locales: {es: "/{_locale}/portada", en: "/{_locale}/homepage" }
     defaults: { _controller: CorredoresRiojaBundle:Default:index }
     requirements:
        _locale: en|es
     
 show_carreras:
-    path: /{_locale}/corredores/carreras
+    locales: {es: "/{_locale}/corredores/carreras", en: "/{_locale}/runners/races"}
     defaults: { _controller: inmemory.carreraservicerepository:showAllAction }
     requirements:
        _locale: en|es
 
 show_carrera_slug:
-    path: /{_locale}/corredores/carreras/{slug}
+    locales: {es: "/{_locale}/corredores/carreras/{slug}", en: "/{_locale}/runners/races/{slug}"}
     defaults: { _controller: inmemory.carreraservicerepository:showCarreraSlugAction }
     requirements:
        _locale: en|es
 
 show_organizacion_slug:
-    path: /{_locale}/corredores/organizacion/{slug}
+    locales: {es: "/{_locale}/corredores/organizacion/{slug}",en: "/{_locale}/runners/organization/{slug}"}
     defaults: { _controller: inmemory.organizacionservicerepository:showOrganizacionSlugAction }
     requirements:
        _locale: en|es
 
 registro:
-    path:     /{_locale}/corredores/registro
+    locales:  {es: "/{_locale}/corredores/registro", en: "/{_locale}/runners/register"}
     defaults: { _controller: CorredoresRiojaBundle:Default:registro }
     requirements:
        _locale: en|es
     
 perfil:
-    path:     /{_locale}/corredores/perfil
+    locales:     {es: "/{_locale}/corredores/perfil", en: "/{_locale}/runners/profile"}
     defaults: { _controller: CorredoresRiojaBundle:Default:cambiarCorredor }
     requirements:
        _locale: en|es
     
 apuntar_carrera:
-    path:     /{_locale}/corredores/inscribir/{slug}
+    locales:    {es: "/{_locale}/corredores/inscribir/{slug}", en: "/{_locale}/runners/signup/{slug}"}
     defaults: { _controller: inmemory.corredoresservicerepository:apuntarCarreraAction }
     requirements:
        _locale: en|es
     
 
 desapuntar_carrera:
-    path:     /{_locale}/corredores/desapuntar/{slug}
+    locales:     {es: "/{_locale}/corredores/desapuntar/{slug}", en: "/{_locale}/runners/disappoint/{slug}"}
     defaults: { _controller: inmemory.corredoresservicerepository:desapuntarCarreraAction }
     requirements:
        _locale: en|es
     
 admin:
-    path:     /{_locale}/admin
+    locales:     {es: "/{_locale}/admin", en: "/{_locale}/admin"}
     defaults: { _controller: CorredoresRiojaBundle:Default:admin }
     requirements:
        _locale: en|es
 
 usuario_login:
-    path: /{_locale}/corredores/login
+    locales: {es: "/{_locale}/corredores/login", en: "/{_locale}/runners/login"}
     defaults: { _controller: CorredoresRiojaBundle:Default:login }
     requirements:
        _locale: en|es
        
 usuario_login_check:
-    path: /{_locale}/corredores/login_check
+    locales: {es: "/{_locale}/corredores/login_check", en: "/{_locale}/runners/login_check"}
     requirements:
        _locale: en|es
        
 usuario_logout:
-    path: /{_locale}/corredores/logout
+    locales: {es: "/{_locale}/corredores/logout", en: "/{_locale}/runners/logout"}
     requirements:
        _locale: en|es
        
 show_mis_carreras:
-    path: /{_locale}/corredores/miscarreras
+    locales: {es: "/{_locale}/corredores/miscarreras", en: "/{_locale}/runners/myraces"}
     defaults: { _controller: inmemory.corredoresservicerepository:showCarrerasCorredorAction }
     requirements:
        _locale: en|es

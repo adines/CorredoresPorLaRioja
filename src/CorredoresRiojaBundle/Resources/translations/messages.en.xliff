@@ -1,4 +1,4 @@
-<?xml version="1.0">
+<?xml version="1.0"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
     <file source-language="es" datatype="plaintext" original="file.ext">
         <body>
@@ -13,8 +13,164 @@
                     Below are some of the races to which you can sign up.</target>
             </trans-unit>
             <trans-unit id="3">
-                <source>portada.inscribite</source>
+                <source>portada.inscribete</source>
                 <target>Sign up</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>menu.corredores</source>
+                <target>Runners area</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>menu.organizadores</source>
+                <target>Organizations area</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>menu.intranet</source>
+                <target>Intranet</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>submenu.portada</source>
+                <target>Home</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>submenu.carreras</source>
+                <target>Races</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>submenu.miscarreras</source>
+                <target>My races</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>submenu.login</source>
+                <target>Login</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>submenu.perfil</source>
+                <target>Profile</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>submenu.logout</source>
+                <target>Logout</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>pie.contacto</source>
+                <target>Contact</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>carreras.nodisputadas</source>
+                <target>Races to disput</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>carreras.disputadas</source>
+                <target>Races disputed</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>carreras.clasificaciones</source>
+                <target>Classifications</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>carreras.desapuntarse</source>
+                <target>Disappoint</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>carreras.nohasdisputado</source>
+                <target>You have not played any race yet.</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>carreras.nohasapuntado</source>
+                <target>You are not currently registered in any career.</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>carreras.saludo</source>
+                <target>Hello %nombre% below are the races in which you are registered and the races you have played.</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>login.titulo</source>
+                <target>Registered runners access</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>login.nuevo</source>
+                <target>New runner</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>login.mensaje</source>
+                <target>To be able to register for races you need to register.</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>login.registrese</source>
+                <target>REGISTER</target>
+            </trans-unit>
+            <trans-unit id="25">
+                <source>organizacion.organizadas</source>
+                <target>Organized races:</target>
+            </trans-unit>
+            <trans-unit id="26">
+                <source>organizacion.nohaorganizado</source>
+                <target>It has not organized any race.</target>
+            </trans-unit>
+            <trans-unit id="27">
+                <source>carrera.fecha</source>
+                <target>Celebration date: </target>
+            </trans-unit>
+            <trans-unit id="28">
+                <source>carrera.distancia</source>
+                <target>Distance: </target>
+            </trans-unit>
+            <trans-unit id="29">
+                <source>carrera.organiza</source>
+                <target>Organization: </target>
+            </trans-unit>
+            <trans-unit id="30">
+                <source>carrera.yanopuede</source>
+                <target>Sorry, you can not sign up for this race anymore.</target>
+            </trans-unit>
+            <trans-unit id="31">
+                <source>carrera.clasificacion</source>
+                <target>Classification</target>
+            </trans-unit>
+            <trans-unit id="32">
+                <source>carrera.dorsal</source>
+                <target>Dorsal</target>
+            </trans-unit>
+            <trans-unit id="33">
+                <source>carrera.nombre</source>
+                <target>Name</target>
+            </trans-unit>
+            <trans-unit id="34">
+                <source>carrera.tiempo</source>
+                <target>Time</target>
+            </trans-unit>
+            <trans-unit id="35">
+                <source>carrera.inscritos</source>
+                <target>Enrolled</target>
+            </trans-unit>
+            <trans-unit id="36">
+                <source>carrera.noinscritos</source>
+                <target>There are still no resgistered in this race.</target>
+            </trans-unit>
+            <trans-unit id="37">
+                <source>carrera.hasta</source>
+                <target>You have up to %fecha% to sign up.</target>
+            </trans-unit>
+            <trans-unit id="38">
+                <source>submenu.anyadircarrera</source>
+                <target>Add race</target>
+            </trans-unit>
+            <trans-unit id="39">
+                <source>submenu.modificarcarrera</source>
+                <target>Modify race</target>
+            </trans-unit>
+            <trans-unit id="40">
+                <source>loginorg.titulo</source>
+                <target>Registered organizations access.</target>
+            </trans-unit>
+            <trans-unit id="41">
+                <source>loginorg.nueva</source>
+                <target>New Organization.</target>
+            </trans-unit>
+            <trans-unit id="42">
+                <source>loginorg.mensaje</source>
+                <target>In order to create races it is necessary to register.</target>
             </trans-unit>
         </body>
     </file>

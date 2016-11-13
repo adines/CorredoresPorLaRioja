@@ -1,7 +1,7 @@
 {# empty Twig template #}
 {% extends 'CorredoresRiojaBundle:Corredores:zonacorredores.html.twig' %}
 {% block contenido %}
-    <h1>Carreras por disputar</h1>
+    <h1>{{'carreras.nodisputadas'|trans}}</h1>
     <div class="centro">
     <ul>
         <li class="columna">
@@ -16,7 +16,7 @@
                             <p>{{carrera.fechaCelebracion|date('Y/m/d h:m')}}</p>
                             <div style="float:right; padding:10px 5px">
                                 <a style="padding:5px 8px 5px 10px;background:#5C7E6D;color:#FFF" 
-                                   href="{{ path('apuntar_carrera',{'slug':carrera.slug}) }}" ><span>Inscríbete</span> </a>
+                                   href="{{ path('apuntar_carrera',{'slug':carrera.slug}) }}" ><span>{{'portada.inscribete'|trans}}</span> </a>
                             </div>
                         </div>    
                     </li>
@@ -26,7 +26,7 @@
     </ul>
 </div>
 <div class="clear"></div>   
-<h1>Carreras disputadas</h1>
+<h1>{{'carreras.disputadas'|trans}}</h1>
 
 <div class="centro">
 <ul>
@@ -42,7 +42,7 @@
                         <p>{{carrera.fechaCelebracion|date('Y/m/d h:m')}}</p>
                         <div style="float:right; padding:10px 5px">
                             <a style="padding:5px 8px 5px 10px;background:#5C7E6D;color:#FFF" 
-                               href="{{ path('show_carrera_slug',{'slug':carrera.slug}) }}" ><span>Clasificaciones</span> </a>
+                               href="{{ path('show_carrera_slug',{'slug':carrera.slug}) }}" ><span>{{'carreras.clasificaciones'|trans}}</span> </a>
                         </div>
                     </div>    
                 </li>

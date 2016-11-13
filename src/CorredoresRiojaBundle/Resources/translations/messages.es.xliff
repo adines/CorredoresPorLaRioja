@@ -1,4 +1,4 @@
-<?xml version="1.0">
+<?xml version="1.0"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
     <file source-language="es" datatype="plaintext" original="file.ext">
         <body>
@@ -13,8 +13,165 @@
                     A continuación se muestran algunas de las carreras a las que te puedes inscribir.</target>
             </trans-unit>
             <trans-unit id="3">
-                <source>portada.inscribite</source>
+                <source>portada.inscribete</source>
                 <target>Inscribir</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>menu.corredores</source>
+                <target>Zona Corredores</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>menu.organizadores</source>
+                <target>Zona Organizadores</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>menu.intranet</source>
+                <target>Intranet</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>submenu.portada</source>
+                <target>Portada</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>submenu.carreras</source>
+                <target>Carreras</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>submenu.miscarreras</source>
+                <target>Mis carreras</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>submenu.login</source>
+                <target>Login</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>submenu.perfil</source>
+                <target>Perfil</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>submenu.logout</source>
+                <target>Logout</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>pie.contacto</source>
+                <target>Contacto</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>carreras.nodisputadas</source>
+                <target>Carreras por disputar</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>carreras.disputadas</source>
+                <target>Carreras disputadas</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>carreras.clasificaciones</source>
+                <target>Clasificaciones</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>carreras.desapuntarse</source>
+                <target>Desapuntarse</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>carreras.nohasdisputado</source>
+                <target>Todavía no has disputado ninguna carrera.</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>carreras.nohasapuntado</source>
+                <target>No estás apuntado a ninguna carrera actualmente.</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>carreras.saludo</source>
+                <target>Hola %nombre% a continuación se muestran las carreras en las que estás inscrito
+        y las carreras que has disputado.</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>login.titulo</source>
+                <target>Acceso de corredores registrados</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>login.nuevo</source>
+                <target>Nuevo Corredor</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>login.mensaje</source>
+                <target>Para poder inscribirte en las carreras es necesario registrarse.</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>login.registrese</source>
+                <target>REGISTRESE</target>
+            </trans-unit>
+            <trans-unit id="25">
+                <source>organizacion.organizadas</source>
+                <target>Carreras organizadas:</target>
+            </trans-unit>
+            <trans-unit id="26">
+                <source>organizacion.nohaorganizado</source>
+                <target>No ha organizado ninguna carrera.</target>
+            </trans-unit>
+            <trans-unit id="27">
+                <source>carrera.fecha</source>
+                <target>Fecha celebración: </target>
+            </trans-unit>
+            <trans-unit id="28">
+                <source>carrera.distancia</source>
+                <target>Distancia: </target>
+            </trans-unit>
+            <trans-unit id="29">
+                <source>carrera.organiza</source>
+                <target>Organización: </target>
+            </trans-unit>
+            <trans-unit id="30">
+                <source>carrera.yanopuede</source>
+                <target>Lo sentimos, ya no te puedes inscribir a esta carrera.</target>
+            </trans-unit>
+            <trans-unit id="31">
+                <source>carrera.clasificacion</source>
+                <target>Clasificación</target>
+            </trans-unit>
+            <trans-unit id="32">
+                <source>carrera.dorsal</source>
+                <target>Dorsal</target>
+            </trans-unit>
+            <trans-unit id="33">
+                <source>carrera.nombre</source>
+                <target>Nombre</target>
+            </trans-unit>
+            <trans-unit id="34">
+                <source>carrera.tiempo</source>
+                <target>Tiempo</target>
+            </trans-unit>
+            <trans-unit id="35">
+                <source>carrera.inscritos</source>
+                <target>Inscritos</target>
+            </trans-unit>
+            <trans-unit id="36">
+                <source>carrera.noinscritos</source>
+                <target>Todavía no hay inscritos en esta carrera.</target>
+            </trans-unit>
+            <trans-unit id="37">
+                <source>carrera.hasta</source>
+                <target>Tienes hasta el %fecha% para inscribirte.</target>
+            </trans-unit>
+            <trans-unit id="38">
+                <source>submenu.anyadircarrera</source>
+                <target>Añadir carrera</target>
+            </trans-unit>
+            <trans-unit id="39">
+                <source>submenu.modificarcarrera</source>
+                <target>Modificar carrera</target>
+            </trans-unit>
+            <trans-unit id="40">
+                <source>loginorg.titulo</source>
+                <target>Acceso de organizaciones registradas</target>
+            </trans-unit>
+            <trans-unit id="41">
+                <source>loginorg.nueva</source>
+                <target>Nueva Organización.</target>
+            </trans-unit>
+            <trans-unit id="42">
+                <source>loginorg.mensaje</source>
+                <target>Para poder crear carreras es necesario registrarse.</target>
             </trans-unit>
         </body>
     </file>

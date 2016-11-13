@@ -2,11 +2,10 @@
 {% extends 'CorredoresRiojaBundle:Corredores:zonacorredores.html.twig' %}
 
 {% block contenido %}
-    <p> Hola Pepe, a continuación se muestran las carreras en las que estás inscrito
-        y las carreras que has disputado. </p>
+    <p> {{'carreras.saludo'|trans({ '%nombre%' : nombre })}} </p>
 
 
-    <h2>Carreras por disputar</h2>
+    <h2>{{'carreras.nodisputadas'|trans}}</h2>
     <div class="centro"/>
     <ul>
         <li class="columna">
@@ -21,19 +20,19 @@
                             <p>{{carrera.fechaCelebracion|date('Y/m/d h:m')}}</p>
                             <div style="float:right; padding:10px 5px">
                                 <a style="padding:5px 8px 5px 10px;background:#5C7E6D;color:#FFF" 
-                                   href="{{ path('desapuntar_carrera',{'slug':carrera.slug}) }}" ><span>Desapuntarse</span> </a>
+                                   href="{{ path('desapuntar_carrera',{'slug':carrera.slug}) }}" ><span>{{'carreras.desapuntarse'|trans}}</span> </a>
                             </div>
                         </div>    
                     </li>
                 {% else %} 
-                    <p> No estsá apuntado a ninguna carrera actualmente.</p>
+                    <p> {{'carreras.nohasapuntado'|trans}}</p>
                 {% endfor %}
             </ul>
         </li>
     </ul>
 </div>
 <div class="clear"></div>   
-<h2>Carreras disputadas</h2>
+<h2>{{'carreras.disputadas'|trans}}</h2>
 <div class="centro"/>
 <ul>
     <li class="columna">
@@ -48,12 +47,12 @@
                         <p>{{carrera.fechaCelebracion|date('Y/m/d h:m')}}</p>
                         <div style="float:right; padding:10px 5px">
                             <a style="padding:5px 8px 5px 10px;background:#5C7E6D;color:#FFF" 
-                               href="{{ path('show_carrera_slug',{'slug':carrera.slug}) }}" ><span>Clasificaciones</span> </a>
+                               href="{{ path('show_carrera_slug',{'slug':carrera.slug}) }}" ><span>{{'carreras.clasificaciones'|trans}}</span> </a>
                         </div>
                     </div>    
                 </li>
             {% else %} 
-                <p> Todavía no has disputado ninguna carrera.</p>   
+                <p> {{'carreras.nohasdisputado'|trans}}</p>   
             {% endfor %}
 
         </ul>

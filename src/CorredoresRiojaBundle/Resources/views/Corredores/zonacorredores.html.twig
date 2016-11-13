@@ -5,35 +5,35 @@
     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
         <ul>
             <li>
-            <a href="{{ path('corredores_rioja_homepage') }}">Portada<br/></a>
+            <a href="{{ path('corredores_rioja_homepage') }}">{{'submenu.portada'|trans}}<br/></a>
         </li>
         <li>
-            <a href="{{ path('show_carreras') }}">Carreras<br/></a>
+            <a href="{{ path('show_carreras') }}">{{'submenu.carreras'|trans}}<br/></a>
         </li>
         <li>
-            <a href="{{ path('show_mis_carreras') }}">Mis carreras<br/></a>
+            <a href="{{ path('show_mis_carreras') }}">{{'submenu.miscarreras'|trans}}<br/></a>
         </li>
         <li>
-            <a href="{{ path('perfil') }}">Perfil<br/></a>
+            <a href="{{ path('perfil') }}">{{'submenu.perfil'|trans}}<br/></a>
         </li>
         <li>
-            <a href="{{ path('usuario_logout') }}">Logout<br/></a>
+            <a href="{{ path('usuario_logout') }}">{{'submenu.logout'|trans}}<br/></a>
         </li>
         </ul>
         <div style="clear: left;"></div>
     {% else %}
         <ul>
             <li>
-            <a href="{{ path('corredores_rioja_homepage') }}">Portada<br/></a>
+            <a href="{{ path('corredores_rioja_homepage') }}">{{'submenu.portada'|trans}}<br/></a>
         </li>
         <li>
-            <a href="{{ path('show_carreras') }}">Carreras<br/></a>
+            <a href="{{ path('show_carreras') }}">{{'submenu.carreras'|trans}}<br/></a>
         </li>
         <li>
-            <a href="{{ path('show_mis_carreras') }}">Mis carreras<br/></a>
+            <a href="{{ path('show_mis_carreras') }}">{{'submenu.miscarreras'|trans}}<br/></a>
         </li>
             <li>
-                <a href="{{ path('usuario_login') }}">Login<br/></a>
+                <a href="{{ path('usuario_login') }}">{{'submenu.login'|trans}}<br/></a>
             </li>
         </ul>
         <div style="clear: left;"></div>
